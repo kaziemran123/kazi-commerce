@@ -1,43 +1,96 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated :class="$q.dark.isActive ? 'bg-secondary' : 'bg-black'">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat @click="drawerLeft = !drawerLeft" round dense icon="menu" class="q-px-sm" />
+        <q-icon name="shopping_cart_checkout" />Bikroy
+        <q-btn flat no-caps label="All adds" @click="alladds" />
+        <q-btn flat no-caps label="English" @click="onClick" />
+        <q-toolbar-title></q-toolbar-title>
+        <q-icon name="forum" />
+        <q-btn flat no-caps label="chat" @click="inception = true" />
+        <q-icon name="person" />
+        <q-btn flat no-caps label="Login" @click="inception = true" />
+        <q-btn label="POST FREE ADD" @click="inception = true" />
       </q-toolbar>
+      <div>kazi r=emranhnxjx</div>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header> kazi emran </q-item-label>
 
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
+        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
+    <q-dialog v-model="inception">
+      <q-card>
+        <q-card-section class="q-pt-none">
+          <div>
+            <div class="row q-py-md">
+              <div class="col q-py-md">
+                <div class="text-bold">Post and Ad</div>
+                <div>Login to post your ad and keep track off it in your account</div>
+                <div class="q-py-md">
+                  <q-icon name="sell" />
+                  start posting your own ads.
+                </div>
+                <div class="q-py-md">
+                  <q-icon name="vrpano" /> Marks ads facorite and view them later.
+                </div>
+                <div class="q-py-md">
+                  <q-icon name="visibility" />view and manage your ads at your convenience.
+                </div>
+              </div>
+              <div class="col q-py-md">
+                <div>
+                  <div>
+                    Continue whit mobil number and OTP
+                    <q-input
+                      v-model="text"
+                      type="text"
+                      outlined
+                      placeholder="Enter your mobil number"
+                    />
+                  </div>
+                  <div class="q-py-md">
+                    <q-btn
+                      color="indigo-9"
+                      label="Continue"
+                      @click="onClick"
+                      style="width: 260px"
+                      class="q-py xm"
+                    />
+                  </div>
+                  <div class="flex flex-center">OR</div>
+                  <div class="q-py-md">
+                    <q-input v-model="text" type="text" label="Continue whith Googl" outlined />
+                  </div>
+                  <div>
+                    <q-input
+                      bg-color="red"
+                      v-model="text"
+                      type="text"
+                      label="Continue whith Facebook"
+                      outlined
+                    />
+                  </div>
+                  <div class="q-py-md">
+                    By signing up for an account you agre to our tems an conditions
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </q-card-section>
+
+        <q-card-actions align="right" class="text-primary">
+          <q-btn flat label="Open another dialog" @click="secondDialog = true" />
+          <q-btn flat label="Close" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
 
     <q-page-container>
       <router-view />
@@ -54,63 +107,65 @@ const linksList = [
     title: 'Docs',
     caption: 'quasar.dev',
     icon: 'school',
-    link: 'https://quasar.dev'
+    link: 'https://quasar.dev',
   },
   {
     title: 'Github',
     caption: 'github.com/quasarframework',
     icon: 'code',
-    link: 'https://github.com/quasarframework'
+    link: 'https://github.com/quasarframework',
   },
   {
     title: 'Discord Chat Channel',
     caption: 'chat.quasar.dev',
     icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    link: 'https://chat.quasar.dev',
   },
   {
     title: 'Forum',
     caption: 'forum.quasar.dev',
     icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    link: 'https://forum.quasar.dev',
   },
   {
     title: 'Twitter',
     caption: '@quasarframework',
     icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    link: 'https://twitter.quasar.dev',
   },
   {
     title: 'Facebook',
     caption: '@QuasarFramework',
     icon: 'public',
-    link: 'https://facebook.quasar.dev'
+    link: 'https://facebook.quasar.dev',
   },
   {
     title: 'Quasar Awesome',
     caption: 'Community Quasar projects',
     icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
+    link: 'https://awesome.quasar.dev',
+  },
 ]
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    EssentialLink,
   },
 
-  setup () {
+  setup() {
     const leftDrawerOpen = ref(false)
+    const inception = ref(false)
 
     return {
       linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
+      toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
+      inception,
     }
-  }
+  },
 })
 </script>
