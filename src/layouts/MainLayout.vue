@@ -13,7 +13,36 @@
         <q-btn flat no-caps label="Login" @click="inception = true" />
         <q-btn label="POST FREE ADD" @click="inception = true" />
       </q-toolbar>
-      <div>kazi r=emranhnxjx</div>
+      <div class="flex flex-center q-py-md">
+        <q-btn
+          flat
+          outline
+          no-caps
+          color="primary"
+          icon="location_on"
+          label="All of Bangladesh"
+          @click="basic = true"
+        />
+      </div>
+
+      <div>
+        <div class="flex flex-center">
+          <div>
+            <q-input
+              outlined
+              rounded
+              bg-color="red"
+              v-model="search"
+              placeholder=" what are you looking for?"
+              hint="Debouncing 500ms"
+            >
+              <template v-slot:append>
+                <q-icon name="search" />
+              </template>
+            </q-input>
+          </div>
+        </div>
+      </div>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
@@ -82,7 +111,6 @@
               </div>
             </div>
           </div>
-
         </q-card-section>
 
         <q-card-actions align="right" class="text-primary">
@@ -91,6 +119,39 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
+
+    <div>
+      <div class="q-pa-md q-gutter-sm">
+        <q-btn label="Basic scroll" color="primary" @click="basic = true" />
+        <q-btn label="Fixed size" color="primary" @click="fixed = true" />
+
+        <q-dialog v-model="basic" transition-show="rotate" transition-hide="rotate">
+          <q-card>
+            <q-card-section>
+              <div class="text-h6">Select City or Division</div>
+            </q-card-section>
+
+            <q-card-section class="q-pt-none">
+              <div><a href="All Bangladesh"> All Bangladesh</a></div>
+              <div>Clties</div>
+              <div><a href="Dhaka">Dhaka</a></div>
+              <div><a href="Chattogram">Chattogram</a></div>
+              <div><a href="Sylhet"></a>Sylhet</div>
+              <div><a href="Kulna"></a>Kulna</div>
+              <div><a href="Barishal"></a>Barishal</div>
+              <div><a href="Commila"></a> Commila</div>
+              <div><a href="Rongpur"></a>Rongpur</div>
+              <div><a href="Rajshahi"></a>Rajshahi</div>
+            </q-card-section>
+
+            <q-card-actions align="right">
+              <q-btn flat label="Decline" color="primary" v-close-popup />
+              <q-btn flat label="Accept" color="primary" v-close-popup />
+            </q-card-actions>
+          </q-card>
+        </q-dialog>
+      </div>
+    </div>
 
     <q-page-container>
       <router-view />
@@ -157,6 +218,7 @@ export default defineComponent({
   setup() {
     const leftDrawerOpen = ref(false)
     const inception = ref(false)
+    const basic = ref(false)
 
     return {
       linksList,
@@ -165,6 +227,7 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
       inception,
+      basic,
     }
   },
 })
