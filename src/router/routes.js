@@ -1,14 +1,11 @@
-
-
 const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: 'forntpage', component: () => import('pages/ForntPage.vue') },
-
-
+      { path: '/forntpage', component: () => import('pages/ForntPage.vue') },
+      { path: '/mobile', component: () => import('pages/MobilesPage.vue') },
     ],
   },
 

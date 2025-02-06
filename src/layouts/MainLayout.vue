@@ -116,10 +116,8 @@
       </div>
     </div> -->
 
-    <q-footer elevated>
-      <q-toolbar>
-        <q-toolbar-title>Footer</q-toolbar-title>
-      </q-toolbar>
+    <q-footer class="special_footer">
+      <div>hhjbjhbh</div>
     </q-footer>
 
     <q-page-container>
@@ -149,3 +147,13 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.special_footer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+</style>

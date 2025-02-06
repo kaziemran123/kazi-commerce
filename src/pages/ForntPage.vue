@@ -21,7 +21,7 @@
       <div>
         <div class="row">
           <div class="col">
-            <div>
+            <div class="q-pa-md">
               <q-item clickable v-ripple>
                 <q-item-section avatar>
                   <q-avatar>
@@ -335,7 +335,7 @@
   </div>
 
   <div>
-    <div class="q-pa-md" style="max-width: 350px">
+    <div class="q-pa-md">
       <q-list bordered class="rounded-borders">
         <q-expansion-item
           expand-separator
@@ -343,43 +343,19 @@
           label="Account settings"
           caption="John Doe"
         >
-          <q-card>
-            <q-card-section>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit
-              eos corrupti commodi magni quaerat ex numquam, dolorum officiis modi facere maiores
-              architecto suscipit iste eveniet doloribus ullam aliquid.
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
-
-        <q-expansion-item expand-separator icon="signal_wifi_off" label="Wifi settings">
-          <q-card>
-            <q-card-section>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit
-              eos corrupti commodi magni quaerat ex numquam, dolorum officiis modi facere maiores
-              architecto suscipit iste eveniet doloribus ullam aliquid.
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
-
-        <q-expansion-item expand-separator icon="drafts" label="Drafts" header-class="text-purple">
-          <q-card>
-            <q-card-section>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit
-              eos corrupti commodi magni quaerat ex numquam, dolorum officiis modi facere maiores
-              architecto suscipit iste eveniet doloribus ullam aliquid.
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
-
-        <q-expansion-item icon="assessment" label="Disabled" disable>
-          <q-card>
-            <q-card-section>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit
-              eos corrupti commodi magni quaerat ex numquam, dolorum officiis modi facere maiores
-              architecto suscipit iste eveniet doloribus ullam aliquid.
-            </q-card-section>
-          </q-card>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa impedit ut,
+            beatae, alias ducimus, officia sapiente necessitatibus vero optio cumque libero
+            deserunt. Ipsum suscipit rem obcaecati voluptate voluptatem numquam. Lorem, ipsum dolor
+            sit amet consectetur adipisicing elit. Sunt laborum inventore deleniti. Cum ab pariatur
+            quo accusantium consequatur minus, placeat ratione suscipit vitae aperiam mollitia
+            maiores reprehenderit fugiat. Ipsa, tempore. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Aspernatur odio corporis voluptas animi officiis, quis cupiditate
+            ratione possimus molestias unde amet sit ipsum, dolorum provident quaerat temporibus ab.
+            In, impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, explicabo!
+            Rerum voluptatem repellendus debitis numquam ullam nulla? Eaque cupiditate, architecto
+            quae illo voluptatibus animi a nemo laborum similique quo rem.
+          </div>
         </q-expansion-item>
       </q-list>
     </div>
