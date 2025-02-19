@@ -116,9 +116,7 @@
       </div>
     </div> -->
 
-    <q-footer class="special_footer">
-      <div>hhjbjhbh</div>
-    </q-footer>
+
 
     <q-page-container>
       <router-view />

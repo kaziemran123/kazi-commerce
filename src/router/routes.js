@@ -6,6 +6,8 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: '/forntpage', component: () => import('pages/ForntPage.vue') },
       { path: '/mobile', component: () => import('pages/MobilesPage.vue') },
+      { path: '/LoginHelli', component: () => import('pages/LoginHelli.vue') }
+
     ],
   },
 

@@ -103,7 +103,7 @@
             </div>
             <div>
               <div class="q-pa-md">
-                <q-btn-dropdown label="Loction" no-caps style="width: 200px" flat>
+                <q-btn-dropdown label="Loction" no-caps style="width: 200px" outline>
                   <q-list>
                     <q-item clickable v-close-popup @click="onItemClick">
                       <q-item-section>
@@ -144,7 +144,18 @@
               </div>
             </div>
           </div>
-          <div class="col-2">kkkk</div>
+          <div class="col-2">
+            <div class="q-pa-md">
+              <q-btn
+                color="primary"
+                icon="bookmark"
+                label="Save Search"
+                @click="search = true"
+                no-caps
+                flat
+              />
+            </div>
+          </div>
         </div>
       </q-card>
     </div>
@@ -160,7 +171,7 @@ export default defineComponent({
   name: 'MobilesPage',
 
   setup() {
-    const search = ref(null)
+    const search = ref()
     const customModel = ref('no')
     const categoryOptions = ref(['Member', 'Authorized dealers', 'no-members'])
     const category = ref('')
@@ -197,6 +208,14 @@ export default defineComponent({
         location: 'Mr Homeless',
         image:
           'https://i.bikroy-st.com/apple-iphone-14-pro-max-used-for-sale-dhaka-1706/0a0e0059-ec20-457e-8ef4-f3daa832973a/780/585/fitted.jpg',
+      },
+      {
+        id: 3,
+        price: '$2000',
+        name: 'Adhapatan',
+        location: 'Mr Adhopaton',
+        image:
+          'https://i.bikroy-st.com/apple-iphone-16-pro-max-256gb-deal-new-for-sale-dhaka/c73e9b75-7b1a-4e17-a8b2-8d074582967f/780/585/fitted.jpg',
       },
     ])
 
